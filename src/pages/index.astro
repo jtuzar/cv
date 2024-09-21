@@ -5,7 +5,7 @@ import Experience, {
 } from "../components/experience.astro";
 
 const bio =
-    "Experienced software engineer skilled in fullstack development, proficient in .NET for backend and TypeScript frameworks for frontend. Passionate about continual learning and problem-solving in dynamic environments.";
+    "Full-stack developer specializing in frontend development with TypeScript and modern frameworks. Passionate about crafting intuitive, high-performance user experiences, with a continuous drive for learning and problem-solving. Thrive in dynamic, fast-paced environments.";
 
 const contact = { phone: "+420 777 212 220", email: "jakub.tuzar@gmail.com" };
 
@@ -26,7 +26,7 @@ const experience: ExperienceProps[] = [
         start: "October 2022",
         position: "Software engineer",
         description:
-            "Full-stack development of an application for the sale of accounts in Internet banking George",
+            "Contributed to the development of an internet banking application for managing account sales at George. Designed and implemented features to enhance user experience, ensuring a seamless and secure transaction process. Collaborated with cross-functional teams to achieve business goals and deliver a reliable, user-friendly application.",
     },
     {
         company: "Prusa Research",
@@ -34,7 +34,7 @@ const experience: ExperienceProps[] = [
         end: "September 2021",
         position: "Data Analyst",
         description:
-            "Creation of reports and SQL queries, optimization and acceleration of existing SQL queries",
+            "Developed reports and wrote SQL queries to extract and analyze data. Optimized existing SQL queries to improve performance and efficiency, contributing to better decision-making processes.",
     },
     {
         company: "PricewaterhouseCoopers",
@@ -44,27 +44,21 @@ const experience: ExperienceProps[] = [
         description:
             "Data analysis, business analysis and reporting for clients from the financial sector",
     },
-    {
-        company: "the LEGO Group",
-        start: "January 2020",
-        end: "August 2020",
-        position: "Innovation in operation intern",
-        description: "Economic evaluation of innovative projects",
-    },
 ];
 
 const skills = [
-    "C#",
-    ".NET",
     "TypeScript",
-    "Angular",
     "React",
+    "Angular",
+    "REST",
     "Docker",
     "SQL",
-    "CI/CD",
+    "Neovim",
     "Kafka",
-    "REST",
+    "CI/CD",
     "NoSQL",
+    "C#",
+    ".NET",
 ];
 
 const hobbies = [
@@ -139,7 +133,7 @@ const hobbies = [
                         <div
                             class="px-8 py-3 col-span-1 border-black border-b-2 gap-8 max-h-44"
                         >
-                            <ul class="list-disc columns-2">
+                            <ul class="list-disc grid grid-cols-2 gap-x-4">
                                 {
                                     skills.map((s) => (
                                         <li class="text-sm">{s}</li>
