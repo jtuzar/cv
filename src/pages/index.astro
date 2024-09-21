@@ -1,6 +1,78 @@
 ---
 import "@fontsource/ubuntu-mono";
-import Experience from "../components/experience.astro";
+import Experience, {
+    type ExperienceProps,
+} from "../components/experience.astro";
+
+const bio =
+    "Experienced software engineer skilled in fullstack development, proficient in .NET for backend and TypeScript frameworks for frontend. Passionate about continual learning and problem-solving in dynamic environments.";
+
+const contact = { phone: "+420 777 212 220", email: "jakub.tuzar@gmail.com" };
+
+const education = [
+    {
+        title: "Bachelor's degree in Mechanical Engineering",
+        uni: "CTU in Prague",
+    },
+    {
+        title: "Master's degree in Economics",
+        uni: "CTU in Prague",
+    },
+];
+
+const experience: ExperienceProps[] = [
+    {
+        company: "Česká spořitelna a.s.",
+        start: "October 2022",
+        position: "Software engineer",
+        description:
+            "Full-stack development of an application for the sale of accounts in Internet banking George",
+    },
+    {
+        company: "Prusa Research",
+        start: "September 2021",
+        end: "September 2021",
+        position: "Data Analyst",
+        description:
+            "Creation of reports and SQL queries, optimization and acceleration of existing SQL queries",
+    },
+    {
+        company: "PricewaterhouseCoopers",
+        start: "September 2020",
+        end: "August 2021",
+        position: "Technology consultant",
+        description:
+            "Data analysis, business analysis and reporting for clients from the financial sector",
+    },
+    {
+        company: "the LEGO Group",
+        start: "January 2020",
+        end: "August 2020",
+        position: "Innovation in operation intern",
+        description: "Economic evaluation of innovative projects",
+    },
+];
+
+const skills = [
+    "C#",
+    ".NET",
+    "TypeScript",
+    "Angular",
+    "React",
+    "Docker",
+    "SQL",
+    "CI/CD",
+    "Kafka",
+    "REST",
+    "NoSQL",
+];
+
+const hobbies = [
+    "Tech",
+    "Gaming",
+    "LEGO (last build - Star Destroyer)",
+    "Playing guitar",
+];
 ---
 
 <html class="bg-slate-400">
@@ -36,24 +108,19 @@ import Experience from "../components/experience.astro";
                                     <div>
                                         <a
                                             class="font-bold"
-                                            href="mailto:jakub.tuzar@gmail.com"
-                                            >jakub.tuzar@gmail.com
+                                            href={`mailto:${contact.email}`}
+                                            >{contact.email}
                                         </a>
                                     </div>
                                     <div>
                                         <p class="font-bold">
-                                            +420 777 212 220
+                                            {contact.phone}
                                         </p>
                                     </div>
                                 </div>
                                 <div class="px-8 py-3">
                                     <p class="text-sm">
-                                        Experienced software engineer skilled in
-                                        fullstack development, proficient in
-                                        .NET for backend and TypeScript
-                                        frameworks for frontend. Passionate
-                                        about continual learning and
-                                        problem-solving in dynamic environments.
+                                        {bio}
                                     </p>
                                 </div>
                             </div>
@@ -70,22 +137,14 @@ import Experience from "../components/experience.astro";
                             Skills
                         </h1>
                         <div
-                            class="px-8 py-3 col-span-1 border-black border-b-2 grid grid-cols-2 gap-8"
+                            class="px-8 py-3 col-span-1 border-black border-b-2 gap-8 max-h-44"
                         >
-                            <ul class="col-span-1 list-disc">
-                                <li class="text-sm">C#</li>
-                                <li class="text-sm">.NET</li>
-                                <li class="text-sm">TypeScript</li>
-                                <li class="text-sm">Angular</li>
-                                <li class="text-sm">React</li>
-                                <li class="text-sm">Docker</li>
-                                <li class="text-sm">SQL</li>
-                                <li class="text-sm">CI/CD</li>
-                            </ul>
-                            <ul class="list-disc">
-                                <li class="text-sm">Kafka</li>
-                                <li class="text-sm">REST</li>
-                                <li class="text-sm">NoSQL</li>
+                            <ul class="list-disc columns-2">
+                                {
+                                    skills.map((s) => (
+                                        <li class="text-sm">{s}</li>
+                                    ))
+                                }
                             </ul>
                         </div>
                     </div>
@@ -96,20 +155,17 @@ import Experience from "../components/experience.astro";
                             Education
                         </h1>
                         <div class="px-8 py-3 border-black border-b-2">
-                            <ul class="list-disc">
-                                <li class="text-sm">
-                                    <p class="text-sm">
-                                        Bachelor's degree in Mechanical
-                                        Engineering
-                                    </p>
-                                    <p class="text-xs italic">CTU in Prague</p>
-                                </li>
-                                <li class="text-sm">
-                                    <p class="mt-4 text-sm">
-                                        Master's degree in Economics
-                                    </p>
-                                    <p class="text-xs italic">CTU in Prague</p>
-                                </li>
+                            <ul class="list-disc gap-4 grid grid-cols-1">
+                                {
+                                    education.map((e) => (
+                                        <li class="text-sm">
+                                            <p class="text-sm">{e.title}</p>
+                                            <p class="text-xs italic">
+                                                {e.uni}
+                                            </p>
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </div>
                     </div>
@@ -121,12 +177,11 @@ import Experience from "../components/experience.astro";
                         </h1>
                         <div class="px-8 py-3 col-span-1">
                             <ul class="list-disc">
-                                <li class="text-sm">Tech</li>
-                                <li class="text-sm">Game development</li>
-                                <li class="text-sm">
-                                    LEGO (last build - Star Destroyer)
-                                </li>
-                                <li class="text-sm">Playing guitar</li>
+                                {
+                                    hobbies.map((h) => (
+                                        <li class="text-sm">{h}</li>
+                                    ))
+                                }
                             </ul>
                         </div>
                     </div>
@@ -141,33 +196,7 @@ import Experience from "../components/experience.astro";
                         <div
                             class="px-8 py-3 col-span-2 grid grid-cols-1 gap-10"
                         >
-                            <Experience
-                                company="Česká spořitelna a.s."
-                                start="October 2022"
-                                position="Software engineer"
-                                description="Full-stack development of an application for the sale of accounts in Internet banking George"
-                            />
-                            <Experience
-                                company="Prusa Research"
-                                start="September 2021"
-                                end="September 2021"
-                                position="Data Analyst"
-                                description="Creation of reports and SQL queries, optimization and acceleration of existing SQL queries"
-                            />
-                            <Experience
-                                company="PricewaterhouseCoopers"
-                                start="September 2020"
-                                end="August 2021"
-                                position="Technology consultant"
-                                description="Data analysis, business analysis and reporting for clients from the financial sector"
-                            />
-                            <Experience
-                                company="the LEGO Group"
-                                start="January 2020"
-                                end="August 2020"
-                                position="Innovation in operation intern"
-                                description="Economic evaluation of innovative projects"
-                            />
+                            {experience.map((e) => <Experience {...e} />)}
                         </div>
                     </div>
                 </div>

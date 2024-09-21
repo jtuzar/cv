@@ -1,12 +1,13 @@
 ---
-interface Props {
+export interface ExperienceProps {
     company: string;
     start: string;
     end?: string;
     position: string;
     description: string;
 }
-const { company, start, end, position, description }: Props = Astro.props;
+const { company, start, end, position, description }: ExperienceProps =
+    Astro.props;
 ---
 
 <div class="grid grid-rows-2 gap-y-3">
