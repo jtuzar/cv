@@ -4,6 +4,9 @@ import Experience, {
     type ExperienceProps,
 } from "../components/experience.astro";
 
+const name = "Jakub Tuzar";
+const jobTitle = "Full-stack Developer";
+
 const bio =
     "Full-stack developer specializing in frontend development with TypeScript and modern frameworks. Passionate about crafting intuitive, high-performance user experiences, with a continuous drive for learning and problem-solving. Thrive in dynamic, fast-paced environments.";
 
@@ -24,7 +27,7 @@ const experience: ExperienceProps[] = [
     {
         company: "Česká spořitelna a.s.",
         start: "October 2022",
-        position: "Software engineer",
+        position: "Full-stack Developer",
         description:
             "Contributed to the development of an internet banking application for managing account sales at George. Designed and implemented features to enhance user experience, ensuring a seamless and secure transaction process. Collaborated with cross-functional teams to achieve business goals and deliver a reliable, user-friendly application.",
     },
@@ -40,9 +43,9 @@ const experience: ExperienceProps[] = [
         company: "PricewaterhouseCoopers",
         start: "September 2020",
         end: "August 2021",
-        position: "Technology consultant",
+        position: "Technology Consultant",
         description:
-            "Data analysis, business analysis and reporting for clients from the financial sector",
+            "Data analysis, business analysis and reporting for clients from the financial sector.",
     },
 ];
 
@@ -90,10 +93,10 @@ const hobbies = [
                             class="row-span-1 border-b-2 border-black bg-cyan-700 p-4 pl-8"
                         >
                             <h1 class="font-extrabold text-5xl text-white mb-4">
-                                Jakub Tuzar
+                                {name}
                             </h1>
                             <h2 class="text-2xl text-white">
-                                Software Engineer
+                                {jobTitle}
                             </h2>
                         </div>
                         <div class="row-span-1">
