@@ -29,7 +29,7 @@ const experience: ExperienceProps[] = [
         start: "January 2022",
         position: "Full-stack Developer",
         description:
-            "Developed WhatsApp integration in a B2B2C SaaS to be used as a main channel of communication for customer who prefer that over SMS.",
+            "Drived development and design of the WhatsApp integration in a B2B2C SaaS to be used as a main channel of communication for customer who prefer that over SMS.",
     },
     {
         company: "Česká spořitelna a.s.",
@@ -56,16 +56,10 @@ const skills = [
     "PostgreSQL",
     "Neovim",
     "Tailwindcss",
+    "Learning",
 ];
 
-const hobbies = [
-    "Tech",
-    "Bitcoin",
-    "Parenting",
-    "Gaming",
-    "LEGO (last build - Star Destroyer)",
-    "Playing guitar",
-];
+const hobbies = ["Tech", "Bitcoin", "Parenting", "Gaming", "LEGO", "Guitar"];
 ---
 
 <html class="bg-slate-400">
@@ -82,9 +76,7 @@ const hobbies = [
                     <img class="h-full object-cover" src="profile-pic.jpeg" />
                 </div>
                 <div id="name-and-bio" class="h-full col-span-2">
-                    <div
-                        class="border-b-black border-b-2 flex flex-col h-full"
-                    >
+                    <div class="border-b-black border-b-2 flex flex-col h-full">
                         <div
                             class="border-b-2 border-black bg-cyan-700 p-4 pl-8"
                         >
@@ -123,7 +115,7 @@ const hobbies = [
                 <div class="flex flex-col basis-1/3 border-r-2 border-black">
                     <div id="skills">
                         <h1
-                            class="text-4xl font-bold px-6 py-2 flex items-center border-b-2 border-black"
+                            class="text-3xl font-bold px-6 py-2 flex items-center border-b-2 border-black"
                         >
                             Skills
                         </h1>
@@ -139,9 +131,28 @@ const hobbies = [
                             </ul>
                         </div>
                     </div>
+                    <div id="side-project">
+                        <h1
+                            class="text-3xl font-bold px-6 py-2 flex items-center border-b-2 border-black"
+                        >
+                            Side Project
+                        </h1>
+                        <div
+                            class="px-8 py-3 col-span-1 border-black border-b-2 gap-8 max-h-44 text-sm"
+                        >
+                            <p>
+                                <span class="font-bold">Bondly</span> - AI enhanced
+                                activity suggestions for families
+                            </p>
+                            <br />
+                            <a href="https://bondly.family" target="_blank"
+                                >Check it out</a
+                            >
+                        </div>
+                    </div>
                     <div id="education">
                         <h1
-                            class="text-4xl font-bold px-6 py-2 flex items-center border-b-2 border-black"
+                            class="text-3xl font-bold px-6 py-2 flex items-center border-b-2 border-black"
                         >
                             Education
                         </h1>
@@ -162,12 +173,13 @@ const hobbies = [
                     </div>
                     <div id="hobbies">
                         <h1
-                            class="text-4xl font-bold px-6 py-2 flex items-center border-black border-b-2"
+                            class="text-3xl font-bold px-6 py-2 flex items-center border-black border-b-2"
                         >
                             Hobbies
                         </h1>
-                        <div class="px-8 py-3 col-span-1">
-                            <ul class="list-disc">
+
+                        <div class="px-8 py-3 col-span-1 gap-8 max-h-44">
+                            <ul class="list-disc grid grid-cols-2 gap-x-4">
                                 {
                                     hobbies.map((h) => (
                                         <li class="text-sm">{h}</li>
@@ -180,7 +192,7 @@ const hobbies = [
                 <div class="flex flex-col basis-2/3">
                     <div id="experience">
                         <h1
-                            class="text-4xl font-bold px-6 py-2 flex items-center col-span-2 border-b-2 border-black"
+                            class="text-3xl font-bold px-6 py-2 flex items-center col-span-2 border-b-2 border-black"
                         >
                             Experience
                         </h1>
@@ -213,6 +225,31 @@ const hobbies = [
         margin: 0.5in;
     }
 
+    /* Link styles */
+    a {
+        color: #0e7490; /* cyan-700 */
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-offset: 2px;
+        transition: all 0.2s ease;
+    }
+
+    a:hover {
+        color: #0891b2; /* cyan-600 */
+        text-decoration-style: solid;
+        text-underline-offset: 3px;
+    }
+
+    a:focus {
+        outline: 2px solid #0e7490;
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+
+    a:visited {
+        color: #155e75; /* cyan-800 */
+    }
+
     @media print {
         html,
         body {
@@ -238,6 +275,12 @@ const hobbies = [
         * {
             -webkit-print-color-adjust: exact !important;
             color-adjust: exact !important;
+        }
+
+        /* Keep link styles in print */
+        a {
+            color: #0e7490 !important;
+            text-decoration: underline !important;
         }
     }
 </style>
